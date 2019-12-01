@@ -52,6 +52,14 @@ public class PelaajanKasi {
         return (kortit.get(0).getArvo() == 1 && kortit.get(1).getArvo() > 9) || (kortit.get(0).getArvo() > 9 && kortit.get(1).getArvo() == 1);
     }
     
+    public String tulostaKasi() {
+        String kasi = "";
+        for (Kortti kortti: kortit) {
+            kasi += kortti.getMaa() + "" + Korttipakka.getKortinNimi(kortti.getArvo()) + " ";
+        }
+        return kasi;
+    }
+    
     @Override
     public String toString() {
         return "PelaajanKasi{" + "kortit=" + kortit + '}';

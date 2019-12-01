@@ -38,5 +38,4 @@ public class Kortti {
         return "Kortti{" + "maa=" + maa + ", arvo=" + arvo + '}';
     }
     
-    
 }

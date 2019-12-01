@@ -15,12 +15,12 @@ import java.util.Arrays;
 public class Korttipakka {
     
     private ArrayList<Kortti> pakka = new ArrayList<>();
-
+//    static ArrayList<String> maat = new ArrayList<>(Arrays.asList("pata ♠", "risti ♣", "hertta ♥", "ruutu ♦"));
+    static ArrayList<String> maat = new ArrayList<>(Arrays.asList("♠", "♣", "♥", "♦"));
+    static ArrayList<String> korttienNimet = new ArrayList<>(Arrays.asList("Ässä", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Sotilas", "Kuningatar", "Kuningas"));
+    
     public Korttipakka() {
-         
-        ArrayList<String> maat = new ArrayList<>(Arrays.asList("pata", "risti", "hertta", "ruutu"));
-        
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < maat.size(); i++) {
             for (int c = 1; c <= 13; c++) {
                 pakka.add(new Kortti(maat.get(i),c));
             }
@@ -44,6 +44,14 @@ public class Korttipakka {
         Kortti current = pakka.get(0);
         pakka.remove(0);
         return current;
+    }
+    
+    public void prependKortti(Kortti kortti) {
+        pakka.add(0, kortti);
+    }
+    
+    public static String getKortinNimi(int arvo) {
+        return korttienNimet.get(arvo - 1);
     }
     
     @Override
